@@ -13,7 +13,8 @@ const postcss = require('gulp-postcss');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const imagemin = require('gulp-imagemin');
-const uglify = require('gulp-uglify');
+const uglify = require('gulp-terser');
+const terser = require('gulp-terser');
 
 // Path files
 const files = {
@@ -45,16 +46,18 @@ function scssTask() {
 
 // exports.scssTask = scssTask; // If you want to just ivoke this task.
 
-// JS Task: Concatenates and uglify JS files into all.js
+// JS Task: Concatenates and uglify JS files into script.js
 function jsTask() {
-  return src([
-    files.jsPath,
-    //,'!' + 'includes/js/jquery.min.js', // to exclude any specific files
-  ])
-    .pipe(concat('script.js'))
-    .pipe(uglify())
-    .pipe(dest('dist/script'))
-    .pipe(browserSync.stream());
+  return (
+    src([
+      files.jsPath,
+      //,'!' + 'includes/js/jquery.min.js', // to exclude any specific files
+    ])
+      // .pipe(concat('script.js'))
+      // .pipe(terser())
+      .pipe(dest('dist/script'))
+      .pipe(browserSync.stream())
+  );
 }
 
 // Watch Task: watch SCSS and Js file for changes
