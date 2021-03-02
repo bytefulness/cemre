@@ -4,9 +4,523 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="dist/stylesheet/main.css" />
     <script src="dist/script/script.js" defer></script>
     <title>Cemre - YKS Puan Hesaplayıcı</title>
   </head>
-  <body></body>
+  <body>
+    <header class="container">
+      <h1 class="brand">CEMRE</h1>
+    </header>
+
+    <main>
+      <!-- Welcome Section -->
+      <section class="welcome container">
+        <h2 class="welcome__title">Merhaba, ben Cemre</h2>
+        <p class="welcome__text">
+          Şimdi beraber YKS puanını hesaplayacağız. Öncesinde adını öğrenebilir
+          miyim?
+        </p>
+
+        <div class="input-group" data-group="name">
+          <label for="name">
+            <input
+              id="name"
+              type="text"
+              name="name"
+              autocomplete="off"
+              placeholder="Adınız"
+              class="input"
+            />
+          </label>
+        </div>
+
+        <button class="button button--welcome">Devam et</button>
+      </section>
+
+      <!-- Getting Information Section -->
+      <section class="information container">
+        <h2 class="greeting">Merhaba, Erhan</h2>
+        <p class="information__text">Bazı bilgilere ihtiyacım olacak</p>
+
+        <div class="information__inputs">
+          <div class="information__input" data-group="grade">
+            <label for="grade" class="information__label">Diploma Notun</label>
+            <input
+              type="number"
+              name="grade"
+              id="grade"
+              placeholder="Örn: 75"
+              required
+              class="input"
+            />
+          </div>
+
+          <div class="information__input" data-group="field">
+            <label for="field" class="information__label">Alanın</label>
+            <select name="field" id="field" required>
+              <option value="" selected disabled>Alan seçiniz</option>
+              <option value="sayisal">Sayısal</option>
+              <option value="esitAgirlik">Eşit Ağırlık</option>
+              <option value="sozel">Sözel</option>
+            </select>
+          </div>
+
+          <div class="information__input" data-group="target">
+            <label for="target" class="information__label">Hedef Puanın</label>
+            <input
+              type="number"
+              id="target"
+              name="target"
+              class="input"
+              placeholder="Örnek: 420"
+              required
+            />
+          </div>
+
+          <div class="information__input" data-group="status-placement">
+            <p class="input__label">
+              Geçen sene herhangi bir programa yerleştin mi?
+            </p>
+
+            <input type="radio" id="yes" name="status-placement" value="yes" />
+            <label for="yes" class="information__label">Evet</label>
+
+            <input
+              type="radio"
+              id="no"
+              name="status-placement"
+              value="no"
+              checked
+            />
+            <label for="no" class="information__label">Hayır</label>
+          </div>
+
+          <button class="button button--information">Devam et</button>
+        </div>
+      </section>
+
+      <!-- Getting Exam True, False and Net Numbers -->
+      <section class="exam-values hidden">
+        <h2 class="greeting">Merhaba, Erhan</h2>
+        <p class="information__text">Netlerini girer misin?</p>
+
+        <form action="">
+          <!-- TYT Inputs -->
+          <div class="tyt">
+            <h2 class="exam__type">TYT</h2>
+
+            <!-- Subject -->
+            <div class="subject">
+              <span class="subject__name">Türkçe</span>
+              <span class="subject__question">(40 Soru)</span>
+
+              <!-- Subject Inputs -->
+              <div class="subject__inputs">
+                <div class="subject__value">
+                  <label for="tyt-turkce-true">
+                    <input
+                      type="number"
+                      id="tyt-turkce-true"
+                      name="tyt-turkce-true"
+                      placeholder="Doğru"
+                      class="subject__input"
+                    />
+                  </label>
+                </div>
+
+                <div class="subject__value">
+                  <label for="tyt-turkce-false">
+                    <input
+                      type="number"
+                      id="tyt-turkce-false"
+                      name="tyt-turkce-false"
+                      placeholder="Yanlış"
+                      class="subject__input"
+                    />
+                  </label>
+                </div>
+
+                <div class="subject__value">
+                  <label for="tyt-turkce-net">
+                    <input
+                      type="number"
+                      id="tyt-turkce-net"
+                      name="tyt-turkce-net"
+                      placeholder="Net"
+                      class="subject__input"
+                    />
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="subject">
+              <span class="subject__name">Matematik</span>
+              <span class="subject__question">(40 Soru)</span>
+
+              <!-- Subject Inputs -->
+              <div class="subject__inputs">
+                <div class="subject__value">
+                  <label for="tyt-matematik-true">
+                    <input
+                      type="number"
+                      id="tyt-matematik-true"
+                      name="tyt-matematik-true"
+                      placeholder="Doğru"
+                      class="subject__input"
+                    />
+                  </label>
+                </div>
+
+                <div class="subject__value">
+                  <label for="tyt-matematik-false">
+                    <input
+                      type="number"
+                      id="tyt-matematik-false"
+                      name="tyt-matematik-false"
+                      placeholder="Yanlış"
+                      class="subject__input"
+                    />
+                  </label>
+                </div>
+
+                <div class="subject__value">
+                  <label for="tyt-matematik-net">
+                    <input
+                      type="number"
+                      id="tyt-matematik-net"
+                      name="tyt-matematik-net"
+                      placeholder="Net"
+                      class="subject__input"
+                    />
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="subject">
+              <span class="subject__name">Sosyal Bilimler</span>
+              <span class="subject__question">(20 Soru)</span>
+
+              <!-- Subject Inputs -->
+              <div class="subject__inputs">
+                <div class="subject__value">
+                  <label for="tyt-sosyal-true">
+                    <input
+                      type="number"
+                      id="tyt-sosyal-true"
+                      name="tyt-sosyal-true"
+                      placeholder="Doğru"
+                      class="subject__input"
+                    />
+                  </label>
+                </div>
+
+                <div class="subject__value">
+                  <label for="tyt-sosyal-false">
+                    <input
+                      type="number"
+                      id="tyt-sosyal-false"
+                      name="tyt-sosyal-false"
+                      placeholder="Yanlış"
+                      class="subject__input"
+                    />
+                  </label>
+                </div>
+
+                <div class="subject__value">
+                  <label for="tyt-sosyal-net">
+                    <input
+                      type="number"
+                      id="tyt-sosyal-net"
+                      name="tyt-sosyal-net"
+                      placeholder="Net"
+                      class="subject__input"
+                    />
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="subject">
+              <span class="subject__name">Fen Bilimleri</span>
+              <span class="subject__question">(20 Soru)</span>
+
+              <!-- Subject Inputs -->
+              <div class="subject__inputs">
+                <div class="subject__value">
+                  <label for="tyt-fen-true">
+                    <input
+                      type="number"
+                      id="tyt-fen-true"
+                      name="tyt-fen-true"
+                      placeholder="Doğru"
+                      class="subject__input"
+                    />
+                  </label>
+                </div>
+
+                <div class="subject__value">
+                  <label for="tyt-fen-false">
+                    <input
+                      type="number"
+                      id="tyt-fen-false"
+                      name="tyt-fen-false"
+                      placeholder="Yanlış"
+                      class="subject__input"
+                    />
+                  </label>
+                </div>
+
+                <div class="subject__value">
+                  <label for="tyt-fen-net">
+                    <input
+                      type="number"
+                      id="tyt-fen-net"
+                      name="tyt-fen-net"
+                      placeholder="Net"
+                      class="subject__input"
+                    />
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- AYT Inputs -->
+          <div class="ayt">
+            <h2 class="exam__type">AYT</h2>
+
+            <!-- Subject -->
+            <div class="subject">
+              <span class="subject__name">Edebiyat/Sosyal Bilimler I</span>
+              <span class="subject__question">(40 Soru)</span>
+
+              <!-- Subject Inputs -->
+              <div class="subject__inputs">
+                <div class="subject__value">
+                  <label for="ayt-edebiyat-sosyal-true">
+                    <input
+                      type="number"
+                      id="ayt-edebiyat-sosyal-true"
+                      name="ayt-edebiyat-sosyal-true"
+                      placeholder="Doğru"
+                      class="subject__input"
+                    />
+                  </label>
+                </div>
+
+                <div class="subject__value">
+                  <label for="ayt-edebiyat-sosyal-false">
+                    <input
+                      type="number"
+                      id="ayt-edebiyat-sosyal-false"
+                      name="ayt-edebiyat-sosyal-false"
+                      placeholder="Yanlış"
+                      class="subject__input"
+                    />
+                  </label>
+                </div>
+
+                <div class="subject__value">
+                  <label for="ayt-edebiyat-sosyal-net">
+                    <input
+                      type="number"
+                      id="ayt-edebiyat-sosyal-net"
+                      name="ayt-edebiyat-sosyal-net"
+                      placeholder="Net"
+                      class="subject__input"
+                    />
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="subject">
+              <span class="subject__name">Matematik</span>
+              <span class="subject__question">(40 Soru)</span>
+
+              <!-- Subject Inputs -->
+              <div class="subject__inputs">
+                <div class="subject__value">
+                  <label for="ayt-matematik-true">
+                    <input
+                      type="number"
+                      id="ayt-matematik-true"
+                      name="ayt-matematik-true"
+                      placeholder="Doğru"
+                      class="subject__input"
+                    />
+                  </label>
+                </div>
+
+                <div class="subject__value">
+                  <label for="ayt-matematik-false">
+                    <input
+                      type="number"
+                      id="ayt-matematik-false"
+                      name="ayt-matematik-false"
+                      placeholder="Yanlış"
+                      class="subject__input"
+                    />
+                  </label>
+                </div>
+
+                <div class="subject__value">
+                  <label for="ayt-matematik-net">
+                    <input
+                      type="number"
+                      id="ayt-matematik-net"
+                      name="ayt-matematik-net"
+                      placeholder="Net"
+                      class="subject__input"
+                    />
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="subject">
+              <span class="subject__name">Sosyal Bilimler II</span>
+              <span class="subject__question">(40 Soru)</span>
+
+              <!-- Subject Inputs -->
+              <div class="subject__inputs">
+                <div class="subject__value">
+                  <label for="ayt-sosyal-true">
+                    <input
+                      type="number"
+                      id="ayt-sosyal-true"
+                      name="ayt-sosyal-true"
+                      placeholder="Doğru"
+                      class="subject__input"
+                    />
+                  </label>
+                </div>
+
+                <div class="subject__value">
+                  <label for="ayt-sosyal-false">
+                    <input
+                      type="number"
+                      id="ayt-sosyal-false"
+                      name="ayt-sosyal-false"
+                      placeholder="Yanlış"
+                      class="subject__input"
+                    />
+                  </label>
+                </div>
+
+                <div class="subject__value">
+                  <label for="ayt-sosyal-net">
+                    <input
+                      type="number"
+                      id="ayt-sosyal-net"
+                      name="ayt-sosyal-net"
+                      placeholder="Net"
+                      class="subject__input"
+                    />
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="subject">
+              <span class="subject__name">Fen Bilimleri</span>
+              <span class="subject__question">(40 Soru)</span>
+
+              <!-- Subject Inputs -->
+              <div class="subject__inputs">
+                <div class="subject__value">
+                  <label for="ayt-fen-true">
+                    <input
+                      type="number"
+                      id="ayt-fen-true"
+                      name="ayt-fen-true"
+                      placeholder="Doğru"
+                      class="subject__input"
+                    />
+                  </label>
+                </div>
+
+                <div class="subject__value">
+                  <label for="ayt-fen-false">
+                    <input
+                      type="number"
+                      id="ayt-fen-false"
+                      name="ayt-fen-false"
+                      placeholder="Yanlış"
+                      class="subject__input"
+                    />
+                  </label>
+                </div>
+
+                <div class="subject__value">
+                  <label for="ayt-fen-net">
+                    <input
+                      type="number"
+                      id="ayt-fen-net"
+                      name="ayt-fen-net"
+                      placeholder="Net"
+                      class="subject__input"
+                    />
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="subject">
+              <span class="subject__name">Yabanci Dil</span>
+              <span class="subject__question">(40 Soru)</span>
+
+              <!-- Subject Inputs -->
+              <div class="subject__inputs">
+                <div class="subject__value">
+                  <label for="ayt-yabanci-dil-true">
+                    <input
+                      type="number"
+                      id="ayt-yabanci-dil-true"
+                      name="ayt-yabanci-dil-true"
+                      placeholder="Doğru"
+                      class="subject__input"
+                    />
+                  </label>
+                </div>
+
+                <div class="subject__value">
+                  <label for="ayt-yabanci-dil-false">
+                    <input
+                      type="number"
+                      id="ayt-yabanci-dil-false"
+                      name="ayt-yabanci-dil-false"
+                      placeholder="Yanlış"
+                      class="subject__input"
+                    />
+                  </label>
+                </div>
+
+                <div class="subject__value">
+                  <label for="ayt-yabanci-dil-net">
+                    <input
+                      type="number"
+                      id="ayt-yabanci-dil-net"
+                      name="ayt-yabanci-dil-net"
+                      placeholder="Net"
+                      class="subject__input"
+                    />
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="button">Sonucu Hesapla</button>
+        </form>
+      </section>
+    </main>
+  </body>
 </html>
