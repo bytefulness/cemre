@@ -1,0 +1,56 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: $font-stack;
+  color: $font-color;
+}
+
+p {
+  line-height: 1.7rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button:focus,
+input:focus,
+select:focus {
+  outline: 0;
+}
+
+input::placeholder {
+  color: $filled-input;
+  font-weight: 300;
+}
+
+select {
+  padding: rem(8) rem(8);
+  border-radius: rem(8);
+}

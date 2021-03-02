@@ -1,0 +1,7 @@
+@function rem($font-size) {
+  @return #{$font-size / 16}rem;
+}
+
+@function em($font-size) {
+  @return #{$font-size / 16}em;
+}

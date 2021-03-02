@@ -1,0 +1,98 @@
+// Header
+.brand {
+  font-size: rem(24);
+  font-weight: 600;
+}
+
+.welcome,
+.information {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+// Welcome Section
+.welcome {
+  height: 80vh;
+
+  &__title {
+    font-size: rem(40);
+    line-height: rem(46);
+    margin-bottom: rem(56);
+  }
+
+  &__text {
+    font-size: rem(18);
+    margin-bottom: rem(80);
+  }
+
+  .input-group {
+    position: relative;
+  }
+
+  .button {
+    margin: rem(40) auto 0 auto;
+    display: block;
+  }
+}
+
+// Information Section
+
+.information {
+  padding: rem(64) rem(16);
+
+  .greeting {
+    align-self: flex-start;
+    font-size: rem(32);
+  }
+
+  &__text {
+    font-size: rem(18);
+    font-weight: 500;
+    margin-top: rem(24);
+  }
+
+  &__inputs {
+    margin-top: rem(80);
+  }
+
+  &__input {
+    &:not(:nth-child(1)) {
+      margin-top: rem(32);
+    }
+
+    .input {
+      margin-top: rem(16);
+    }
+
+    &:nth-of-type(4) .information__label {
+      display: inline-block;
+      margin-top: rem(16);
+
+      & {
+        margin-left: rem(4);
+      }
+
+      &:nth-of-type(1) {
+        margin-right: rem(8);
+      }
+    }
+  }
+
+  &__label {
+    font-size: rem(18);
+    font-weight: 600;
+    display: block;
+  }
+
+  label[for='field'] {
+    margin-bottom: rem(16);
+  }
+
+  .button {
+    margin: rem(40) auto 0 auto;
+    display: block;
+  }
+}
