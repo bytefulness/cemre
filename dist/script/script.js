@@ -15,6 +15,10 @@ const inputStatusPlacement = document.querySelector(
   '[name="status-placement"]' // Return first radio
 );
 
+// Forms
+const formWelcome = document.querySelector('.welcome__form');
+const formInformation = document.querySelector('.information__form');
+
 // Input Groups
 const inputGroupName = document.querySelector('[data-group="name"]');
 const inputGroupGrade = document.querySelector('[data-group="grade"]');
@@ -32,7 +36,9 @@ const greetingText = document.querySelector('.greeting');
 let currentSection = 'welcome';
 
 // Functions
-function welcomeNext() {
+function welcomeNext(e) {
+  e.preventDefault();
+
   if (inputName.value === '') {
     if (document.querySelector('.error')) {
       return;
@@ -55,25 +61,24 @@ function welcomeNext() {
 
 const removeErrorMessage = function () {
   // Remove error message if input is filled
-  if (inputGrade.value) {
-    if (inputGroupGrade.querySelector('.error'))
-      inputGroupGrade.querySelector('.error').remove();
+  if (inputGrade.value && inputGroupGrade.querySelector('.error')) {
+    inputGroupGrade.querySelector('.error').remove();
   }
 
-  if (inputField.value) {
-    if (inputGroupField.querySelector('.error'))
-      inputGroupField.querySelector('.error').remove();
+  if (inputField.value && inputGroupField.querySelector('.error')) {
+    inputGroupField.querySelector('.error').remove();
   }
 
-  if (inputTarget.value) {
-    if (inputGroupTarget.querySelector('.error'))
-      inputGroupTarget.querySelector('.error').remove();
+  if (inputTarget.value && inputGroupTarget.querySelector('.error')) {
+    inputGroupTarget.querySelector('.error').remove();
   }
 };
 
 const checkInformations = function () {
-  let errorText = 'Eksik bilgi';
-  let errorHTML = `<p class='error'>${errorText}</p>`;
+  // let errorText = 'Eksik bilgi';
+  // let errorHTML = `<p class='error'>${errorText}</p>`;
+  const errorMessages = [];
+  const generateErrorElement = text => `<p class='error'>${text}</p>`;
 
   // Check inputs
   if (
@@ -85,31 +90,32 @@ const checkInformations = function () {
       // Guard Clause
       if (inputGroupGrade.querySelector('.error')) return;
 
-      errorText = 'Diploma notunuzu girin';
-      errorHTML = `<p class='error'>${errorText}</p>`;
-      inputGroupGrade.insertAdjacentHTML('beforeend', errorHTML);
+      errorMessages[0] = 'Diploma notunuzu girin';
+      const errorElement = generateErrorElement(errorMessages[0]);
+      inputGroupGrade.insertAdjacentHTML('beforeend', errorElement);
     }
 
     if (inputField.value === '') {
       // Guard Clause
       if (inputGroupField.querySelector('.error')) return;
 
-      errorText = 'Alanınızı seçin';
-      errorHTML = `<p class='error'>${errorText}</p>`;
-      inputGroupField.insertAdjacentHTML('beforeend', errorHTML);
+      errorMessages[1] = 'Alanınızı seçin';
+      const errorElement = generateErrorElement(errorMessages[1]);
+      inputGroupField.insertAdjacentHTML('beforeend', errorElement);
     }
 
     if (inputTarget.value === '') {
       // Guard Clause
       if (inputGroupTarget.querySelector('.error')) return;
 
-      errorText = 'Hedef puanınızı belirleyin';
-      errorHTML = `<p class='error'>${errorText}</p>`;
-      inputGroupTarget.insertAdjacentHTML('beforeend', errorHTML);
+      errorMessages[2] = 'Hedef puanınızı belirleyin';
+      const errorElement = generateErrorElement(errorMessages[2]);
+      inputGroupTarget.insertAdjacentHTML('beforeend', errorElement);
     }
   } else {
-    if (inputStatusPlacement.checked) user.statusPlacement = true;
-    else user.statusPlacement = false;
+    inputStatusPlacement.checked
+      ? (user.statusPlacement = true)
+      : (user.statusPlacement = false);
     console.log('Next Section');
   }
 };
@@ -117,19 +123,11 @@ const checkInformations = function () {
 // Event Listeners
 
 // Welcome Section
-buttonWelcomeNext.addEventListener('click', welcomeNext);
+formWelcome.addEventListener('submit', welcomeNext);
 
 // Getting Information Section
-buttonInformationNext.addEventListener('click', function () {
+formInformation.addEventListener('submit', function (e) {
+  e.preventDefault();
   removeErrorMessage();
   checkInformations();
-});
-
-// Keyboard Events
-window.addEventListener('keydown', function (e) {
-  if (e.key === 'Enter') {
-    if (currentSection === 'welcome') {
-      welcomeNext();
-    }
-  }
 });
