@@ -13,7 +13,6 @@ const postcss = require('gulp-postcss');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const imagemin = require('gulp-imagemin');
-const uglify = require('gulp-terser');
 const terser = require('gulp-terser');
 
 // Path files
