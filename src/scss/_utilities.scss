@@ -9,7 +9,8 @@
 }
 
 .button {
-  display: inline-block;
+  display: block;
+  margin: 0 auto;
   background-color: $primary;
   color: $white;
   padding: rem(14) rem(54);
@@ -19,12 +20,19 @@
 }
 
 .input {
+  width: 70%;
   font-size: rem(24);
   font-weight: 600;
   text-align: center;
   border: none;
   padding-bottom: rem(8);
   border-bottom: rem(1) solid $filled-input;
+}
+
+.input[name='name'],
+.input[name='grade'],
+.input[name='target'] {
+  width: 80%;
 }
 
 .error {

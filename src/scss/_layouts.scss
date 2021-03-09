@@ -96,3 +96,51 @@
     display: block;
   }
 }
+
+// SECTION: EXAM VALUES
+.exam-values {
+  form {
+    padding: 0 rem(16);
+  }
+
+  .subject {
+    &__name {
+      font-size: rem(18);
+      font-weight: 600;
+    }
+    &__question {
+      font-size: rem(13);
+      font-weight: 600;
+      color: #5168a7;
+    }
+
+    &__inputs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      // width: 90%;
+      margin: rem(16) auto;
+    }
+
+    &__value {
+      .subject__input {
+        width: 100%;
+        padding: rem(10) rem(16);
+        border: 1px solid $light-blue;
+        border-radius: rem(16);
+        text-align: center;
+
+        @include breakpoint-up(for-tablet-portrait-up) {
+          padding: rem(16);
+        }
+
+        &:focus {
+          border-color: $primary;
+        }
+      }
+
+      &:not(:last-child) {
+        margin-right: rem(16);
+      }
+    }
+  }
+}
