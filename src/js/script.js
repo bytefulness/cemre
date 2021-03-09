@@ -5,6 +5,7 @@ const user = {};
 // Sections
 const sectionWelcome = document.querySelector('.welcome');
 const sectionInformation = document.querySelector('.information');
+const sectionExamValues = document.querySelector('.exam-values');
 
 // Inputs
 const inputName = document.querySelector('input[name="name"]');
@@ -74,6 +75,13 @@ const removeErrorMessage = function () {
   }
 };
 
+const InformationNext = function () {
+  sectionInformation.classList.add('hidden');
+  sectionExamValues.classList.remove('hidden');
+  currentSection = 'examValues';
+  console.log(user);
+};
+
 const checkInformations = function () {
   // let errorText = 'Eksik bilgi';
   // let errorHTML = `<p class='error'>${errorText}</p>`;
@@ -113,10 +121,13 @@ const checkInformations = function () {
       inputGroupTarget.insertAdjacentHTML('beforeend', errorElement);
     }
   } else {
+    // Set Status Placement
     inputStatusPlacement.checked
       ? (user.statusPlacement = true)
       : (user.statusPlacement = false);
-    console.log('Next Section');
+
+    // Next: Exam Values Section
+    InformationNext();
   }
 };
 
