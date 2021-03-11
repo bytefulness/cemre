@@ -75,11 +75,16 @@ const removeErrorMessage = function () {
   }
 };
 
+const getUserInformation = function () {
+  user.gradePoint = +inputGrade.value;
+  user.field = inputField.value;
+  user.targetPoint = +inputTarget.value;
+};
+
 const InformationNext = function () {
   sectionInformation.classList.add('hidden');
   sectionExamValues.classList.remove('hidden');
   currentSection = 'examValues';
-  console.log(user);
 };
 
 const checkInformations = function () {
@@ -127,6 +132,7 @@ const checkInformations = function () {
       : (user.statusPlacement = false);
 
     // Next: Exam Values Section
+    getUserInformation();
     InformationNext();
   }
 };
