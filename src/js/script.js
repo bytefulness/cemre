@@ -16,6 +16,93 @@ const inputStatusPlacement = document.querySelector(
   '[name="status-placement"]' // Return first radio
 );
 
+// ** TYT Türkçe Inputs
+const inputTytTurkceTrue = document.querySelector(
+  'input[name="tyt-turkce-true"]'
+);
+const inputTytTurkceFalse = document.querySelector(
+  'input[name="tyt-turkce-false"]'
+);
+const inputTytTurkceNet = document.querySelector(
+  'input[name="tyt-turkce-net"]'
+);
+
+// ** TYT Matematik Inputs
+const inputTytMatematikTrue = document.querySelector(
+  'input[name="tyt-matematik-true"]'
+);
+const inputTytMatematikFalse = document.querySelector(
+  'input[name="tyt-matematik-false"]'
+);
+const inputTytMatematikNet = document.querySelector(
+  'input[name="tyt-matematik-net"]'
+);
+
+// ** TYT Sosyal Bilimler Inputs
+const inputTytSosyalTrue = document.querySelector(
+  'input[name="tyt-sosyal-true"]'
+);
+const inputTytSosyalFalse = document.querySelector(
+  'input[name="tyt-sosyal-false"]'
+);
+const inputTytSosyalNet = document.querySelector(
+  'input[name="tyt-sosyal-net"]'
+);
+
+// ** TYT Fen Bilimleri Inputs
+const inputTytFenTrue = document.querySelector('input[name="tyt-fen-true"]');
+const inputTytFenFalse = document.querySelector('input[name="tyt-fen-false"]');
+const inputTytFenNet = document.querySelector('input[name="tyt-fen-net"]');
+
+// ** AYT Edebiyat / Sosyal Bilimler
+const inputAytEdebiyatSosyalTrue = document.querySelector(
+  'input[name="ayt-edebiyat-sosyal-true"]'
+);
+const inputAytEdebiyatSosyalFalse = document.querySelector(
+  'input[name="ayt-edebiyat-sosyal-false"]'
+);
+const inputAytEdebiyatSosyalNet = document.querySelector(
+  'input[name="ayt-edebiyat-sosyal-net"]'
+);
+
+// ** AYT Matematik
+const inputAytMatematikTrue = document.querySelector(
+  'input[name="ayt-matematik-true"]'
+);
+const inputAytMatematikFalse = document.querySelector(
+  'input[name="ayt-matematik-false"]'
+);
+const inputAytMatematikNet = document.querySelector(
+  'input[name="ayt-matematik-net"]'
+);
+
+// ** AYT Sosyal Bilimler 2
+const inputAytSosyalTrue = document.querySelector(
+  'input[name="ayt-sosyal-true"]'
+);
+const inputAytSosyalFalse = document.querySelector(
+  'input[name="ayt-sosyal-false"]'
+);
+const inputAytSosyalNet = document.querySelector(
+  'input[name="ayt-sosyal-net"]'
+);
+
+// ** AYT Fen Bilimler
+const inputAytFenTrue = document.querySelector('input[name="ayt-fen-true"]');
+const inputAytFenFalse = document.querySelector('input[name="ayt-fen-false"]');
+const inputAytFenNet = document.querySelector('input[name="ayt-fen-net"]');
+
+// ** AYT Fen Bilimler
+const inputAytYabanciDilTrue = document.querySelector(
+  'input[name="ayt-yabanci-dil-true"]'
+);
+const inputAytYabanciDilFalse = document.querySelector(
+  'input[name="ayt-yabanci-dil-false"]'
+);
+const inputAytYabanciDilNet = document.querySelector(
+  'input[name="ayt-yabanci-dil-net"]'
+);
+
 // Forms
 const formWelcome = document.querySelector('.welcome__form');
 const formInformation = document.querySelector('.information__form');
